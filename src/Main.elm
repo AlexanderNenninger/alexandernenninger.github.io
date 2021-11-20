@@ -5,6 +5,8 @@ import Element.Background as Background
 import Element.Border as Border
 import Element.Font as Font
 import Html exposing (Html, col, main_, menu)
+import Element.Border exposing (widthXY)
+import Html exposing (source)
 
 
 main : Html msg
@@ -66,9 +68,14 @@ left_panel =
         [ height fill
         , width <| fillPortion 1
         , height fill
-        , Background.color <| rgba255 255 2555 255 0.5
+        , Background.color <| rgba255 255 2555 255 0.8
+        , padding 20
         ]
-        [ none ]
+        [ el [Border.rounded 20] 
+            <| image 
+                [height <| px 200] 
+                { src="assets/head_shot.jpg", description="Portrait"} 
+        ]
 
 
 right_panel : Element msg
@@ -77,7 +84,7 @@ right_panel =
         [ height fill
         , width <| fillPortion 1
         , height fill
-        , Background.color <| rgba255 255 2555 255 0.5
+        , Background.color <| rgba255 255 2555 255 0.8
         ]
         [ none ]
 
@@ -87,7 +94,7 @@ main_panel =
     column
         [ height fill
         , width <| fillPortion 4
-        , Background.color <| rgba255 255 255 255 0.5
+        , Background.color <| rgba255 255 255 255 0.8
         , padding 20
         ]
         [ el heading_format <| text ""
