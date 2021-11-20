@@ -15,8 +15,7 @@ main =
         , inFront top_bar
         , Background.image "assets/background_space_gray.png"
         ]
-    <|
-        column
+    <| column
             [ width fill, height fill ]
             [ top_bar
             , row [ width fill, height fill ]
@@ -55,7 +54,13 @@ top_bar =
         ]
 
 
-left_panel : Element msg -- Have some content in the ccenter of the screen
+left_panel : Element msg
+
+
+
+-- Have some content in the ccenter of the screen
+
+
 left_panel =
     column
         [ height fill
